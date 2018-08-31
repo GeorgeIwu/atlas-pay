@@ -24,10 +24,10 @@ import BusinessProfile from '../views/apps/business/Profile.vue'
 import Team from '../views/apps/business/Team.vue'
 
 //pages
-import Login from '../views/pages/authentication/Login.vue'
-import Register from '../views/pages/authentication/Register.vue'
-import ForgotPassword from '../views/pages/authentication/ForgotPassword.vue'
-import NotFound from '../views/pages/NotFound.vue'
+import Login from '../views/apps/main/Login.vue'
+import Register from '../views/apps/main/Register.vue'
+import ForgotPassword from '../views/apps/main/ForgotPassword.vue'
+import NotFound from '../views/apps/main/NotFound.vue'
 
 
 import layouts from '../layout'
