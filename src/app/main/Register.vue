@@ -1,40 +1,34 @@
 <template>
-	<vue-scroll class="login-page align-vertical">
+	<vue-scroll class="register-page align-vertical">
 		<div class="form-wrapper align-vertical-middle">
 			<div class="form-box card-base card-shadow--extraLarge">
 				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
 				
+				<float-label class="styled">
+					<input type="text" placeholder="Name">
+				</float-label>
 				<float-label class="styled">
 					<input type="email" placeholder="E-mail">
 				</float-label>
 				<float-label class="styled">
 					<input type="password" placeholder="Password">
 				</float-label>
+				<float-label class="styled">
+					<input type="password" placeholder="Password (confirm)">
+				</float-label>
 				
 				<div class="flex">
-					<div class="box grow"><el-checkbox>Remember Me </el-checkbox></div>
-					<div class="box grow text-right"><router-link to="/dashboard">Forgot Password?</router-link></div>
+					<div class="box grow"><el-checkbox>I read and accept terms</el-checkbox></div>
 				</div>
 
-				<div class="flex text-center center pt-30 pb-10">			
-					<el-button plain size="small" @click="login" class="login-btn tada animated">
-						LOGIN
+				<div class="flex text-center center pt-30 pb-20">			
+					<el-button plain size="small" @click="login" class="signin-btn tada animated">
+						SIGN IN
 					</el-button>
 				</div>
 
-				<div class="text-divider mv-10">or</div>
-
-				<div class="flex column center pt-10 pb-10">			
-					<el-button plain size="small" @click="login" class="social-btn google">
-						Log in with Google
-					</el-button>
-					<el-button plain size="small" @click="login" class="social-btn facebook">
-						Log in with Facebook
-					</el-button>
-				</div>
-
-				<div class="text-center signin-box pt-20">
-					Don't have an account? <a>Sign in</a>
+				<div class="text-center login-box pt-10">
+					Already have an account? <a>Login</a>
 				</div>
 			</div>
 		</div>
@@ -43,7 +37,7 @@
 
 <script>
 export default {
-	name: 'Login',
+	name: 'Register',
 	data() {
 		return {
 			form: {
@@ -62,9 +56,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 
-.login-page {
+.register-page {
 	background: $text-color;
 	margin-left: -30px;
 	margin-right: -30px;
@@ -90,41 +84,22 @@ export default {
 		.image-logo {
 			width: 80px;
 			margin: 0px auto;
-			margin-bottom: 30px;
+			margin-bottom: 50px;
 			display: block;
 		}
 
-		.login-btn ,
-		.social-btn {
+		.signin-btn {
 			width: 160px;
-
-			&.google {
-				margin-bottom: 10px;
-				background-color: #d73d32;
-				color: white;
-
-				&:hover {
-					border-color: #d73d32;
-				}
-			}
-			&.facebook {
-				background-color: #3f5c9a;
-				color: white;
-
-				&:hover {
-					border-color: #3f5c9a;
-				}
-			}
 		}
 
-		.signin-box {
+		.login-box {
 			font-size: 14px;
 		}
 	}
 }
 
 @media (max-width: 768px) {
-	.layout-container .container .view.login-page {
+	.layout-container .container .view.register-page {
 		margin-left: -5px;
 		margin-right: -5px;
 		max-width: calc(100% + 10px);

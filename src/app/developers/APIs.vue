@@ -2216,7 +2216,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 
 .page-icons {
 	height: 100%;

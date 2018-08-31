@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/_variables';
-@import '../../../assets/scss/_mixins';
+@import '../../assets/scss/_variables';
+@import '../../assets/scss/_mixins';
 
 .msg-box {
 	max-width: 240px;

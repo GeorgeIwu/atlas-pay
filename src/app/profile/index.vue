@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 
 .page-profile {
 	overflow: auto;
@@ -99,7 +99,7 @@ export default {
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background-image: url('../../../assets/images/cover-2.jpg');
+			background-image: url('../../assets/images/cover-2.jpg');
 			background-position: 50%;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -139,7 +139,7 @@ export default {
 				border: 4px solid white;
 				opacity: 0;
 				top: 0px;
-				background-image: url('../../../assets/images/cover-2.jpg');
+				background-image: url('../../assets/images/cover-2.jpg');
 				background-position: 50%;
 				background-size: cover;
 				background-repeat: no-repeat;

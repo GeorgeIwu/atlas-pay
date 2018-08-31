@@ -267,7 +267,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 .page-table {
 	&.overflow {
 		overflow: auto;
@@ -279,7 +279,7 @@ export default {
 }
 </style>
 <style lang="scss">
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 .page-table {
 	.custom-action-row {
 		overflow: hidden;

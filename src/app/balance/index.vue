@@ -318,7 +318,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/_variables';
+@import '../../assets/scss/_variables';
 
 .card-base {
 	.text-divider {

@@ -2,32 +2,32 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 //apps
-import Dashboard from '../views/apps/dashboard/index.vue'
-import GettingStarted from '../views/apps/getting.started/index.vue'
-import Transactions from '../views/apps/transactions/index.vue'
-import Balance from '../views/apps/balance/index.vue'
-import Customers from '../views/apps/customers/index.vue'
-import Plans from '../views/apps/plans/index.vue'
-import Subscriptions from '../views/apps/subscriptions/index.vue'
-import PaymentPages from '../views/apps/payment.pages/index.vue'
-import Profile from '../views/apps/profile/index.vue'
+import Dashboard from '../app/dashboard/index.vue'
+import GettingStarted from '../app/getting.started/index.vue'
+import Transactions from '../app/transactions/index.vue'
+import Balance from '../app/balance/index.vue'
+import Customers from '../app/customers/index.vue'
+import Plans from '../app/plans/index.vue'
+import Subscriptions from '../app/subscriptions/index.vue'
+import PaymentPages from '../app/payment.pages/index.vue'
+import Profile from '../app/profile/index.vue'
 
 //developers
-import Developers from '../views/apps/developers/index.vue'
-import APIs from '../views/apps/developers/APIs.vue'
-import Documentation from '../views/apps/developers/Documentation.vue'
+import Developers from '../app/developers/index.vue'
+import APIs from '../app/developers/APIs.vue'
+import Documentation from '../app/developers/Documentation.vue'
 
 //Business
-import Business from '../views/apps/business/index.vue'
-import Preferences from '../views/apps/business/Preferences.vue'
-import BusinessProfile from '../views/apps/business/Profile.vue'
-import Team from '../views/apps/business/Team.vue'
+import Business from '../app/business/index.vue'
+import Preferences from '../app/business/Preferences.vue'
+import BusinessProfile from '../app/business/Profile.vue'
+import Team from '../app/business/Team.vue'
 
 //pages
-import Login from '../views/apps/main/Login.vue'
-import Register from '../views/apps/main/Register.vue'
-import ForgotPassword from '../views/apps/main/ForgotPassword.vue'
-import NotFound from '../views/apps/main/NotFound.vue'
+import Login from '../app/main/Login.vue'
+import Register from '../app/main/Register.vue'
+import ForgotPassword from '../app/main/ForgotPassword.vue'
+import NotFound from '../app/main/NotFound.vue'
 
 
 import layouts from '../layout'
