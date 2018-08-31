@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:iam::858010164476:server-certificate/wildcardComodoAtlasMoney"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
+  labels:
+    app: atlas-pay-frontend
+  name: atlas-pay-frontend
+spec:
+  ports:
+  - name: http
+    port: 4001
+  - name: external
+    port: 80
+    targetPort: 4001
+  - name: "https"
+    port: 443
+    targetPort: 4001
+    protocol: "TCP"
+  selector:
+    app: atlas-pay-frontend
+    tier: frontend
+  sessionAffinity: None
+  type: LoadBalancer

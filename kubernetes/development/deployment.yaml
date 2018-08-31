@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: atlas-pay-frontend
+  name: atlas-pay-frontend
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: atlas-pay-frontend
+        tier: frontend
+        env: dev
+    spec:
+      imagePullSecrets:
+        - name: registrypullsecret
+      containers:
+      - env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: LOG_LEVEL
+          value: info
+        image: atlasmoneyhub/atlas-pay-frontend
+        imagePullPolicy: "Always"
+        name: atlas-pay-frontend
+        command:
+        - "/bin/bash"
+        - "-c"
+        - "npm start"
+        ports:
+        - containerPort: 4001
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 256Mi
