@@ -1,5 +1,6 @@
 <template>
-	<div class="layout-picker" :class="{'open':pickerOpened, 'pos-left': position === 'right'}">
+	<div>
+	<!-- <div class="layout-picker" :class="{'open':pickerOpened, 'pos-left': position === 'right'}">
 		<div class="icon-box" @click="pickerOpened = !pickerOpened">		
 			<i class="mdi mdi-settings"></i>
 		</div>
@@ -105,6 +106,7 @@
 				</a>
 			</div>
 		</div>
+	</div> -->
 	</div>
 </template>
 

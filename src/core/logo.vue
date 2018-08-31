@@ -2,7 +2,19 @@
 	<div class="box-logo flex align-center" :class="{'nav-collapsed':collapseNav, [mode]:true}">
 		<!--<div class="letter-logo">P</div>-->
 		<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
-		<div class="app-name" @click="goto('/')"><span style="color: #5f8fdf">Atlas</span><span style="color: light-grey">Pay</span></div>
+		<div class="app-name" @click="goto('/')">
+			<!-- <span style="color: #5f8fdf">Atlas</span>
+			<span style="color: light-grey">Pay</span> -->
+			<el-select style="background-color: transparent;" v-model="merchant.name" placeholder="Select">
+				<el-option
+					style="background-color: transparent;"
+					v-for="item in [{ label: 'Unnamed account'}]"
+					:key="item.label"
+					:label="item.label"
+					:value="item.label">
+				</el-option>
+			</el-select>
+		</div>
 		<button class="collapse-nav" @click="collapseNavToggle">
 			<i class="mdi mdi-menu"></i>
 		</button>
@@ -15,7 +27,11 @@ export default {
 	name: 'Logo',
 	props: ['collapseNav', 'mode'],
 	data() {
-		return {}
+		return {
+			merchant: {
+				name: 'Unnamed account'
+			}
+		}
 	},
 	methods: {
 		collapseNavToggle() {
@@ -59,6 +75,17 @@ export default {
 		height: 30px;
 		margin-right: 10px;
 		filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+	}
+
+	.el-select-dropdown__item {
+		border: 1px solid transparent;
+		background-color: transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent;
+		background-color: transparent !important;
+		width: 170px;
 	}
 
 	.app-name {

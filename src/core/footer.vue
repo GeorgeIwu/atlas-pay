@@ -1,6 +1,6 @@
 <template>
 	<div class="footer flex align-center justify-space-between" :class="{'above':position === 'above'}">
-		<span class="">Powered by <a href="https://atlas.money" target="_blank">AtlasMoney</a></span>
+		<span class="">Powered by <a href="https://atlas.money" target="_blank">Atlas<span style="color: gray">Pay</span></a></span>
 	</div>
 </template>
 
