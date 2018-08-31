@@ -186,7 +186,7 @@ const router = new Router({
 			children: [
 				{
 					path: 'profile',
-					name: 'profile',
+					name: 'business-profile',
 					component: BusinessProfile,
 					meta: {
 						auth: true,
