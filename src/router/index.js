@@ -12,16 +12,23 @@ import Subscriptions from '../views/apps/subscriptions/index.vue'
 import PaymentPages from '../views/apps/payment.pages/index.vue'
 import Profile from '../views/apps/profile/index.vue'
 
+//developers
+import Developers from '../views/apps/developers/index.vue'
+import APIs from '../views/apps/developers/APIs.vue'
+import Documentation from '../views/apps/developers/Documentation.vue'
+
+//Business
+import Business from '../views/apps/business/index.vue'
+import Preferences from '../views/apps/business/Preferences.vue'
+import BusinessProfile from '../views/apps/business/Profile.vue'
+import Team from '../views/apps/business/Team.vue'
+
 //pages
 import Login from '../views/pages/authentication/Login.vue'
 import Register from '../views/pages/authentication/Register.vue'
 import ForgotPassword from '../views/pages/authentication/ForgotPassword.vue'
 import NotFound from '../views/pages/NotFound.vue'
 
-//ui
-import Icons from '../views/ui/Icons/Icons.vue'
-import MdIcons from '../views/ui/Icons/MdIcons.vue'
-import FlagIcons from '../views/ui/Icons/FlagIcons.vue'
 
 import layouts from '../layout'
 import store from '../store'
@@ -134,18 +141,18 @@ const router = new Router({
 			}
 		},
 		{
-			path: '/icons',
-			name: 'icons',
-			component: Icons,
+			path: '/developers',
+			name: 'developers',
+			component: Developers,
 			meta: {
 				auth: true,
 				layout: layouts.navLeft
 			},
 			children: [
 				{
-					path: 'md-icons',
-					name: 'md-icons',
-					component: MdIcons,
+					path: 'apis',
+					name: 'apis',
+					component: APIs,
 					meta: {
 						auth: true,
 						layout: layouts.navLeft,
@@ -155,9 +162,56 @@ const router = new Router({
 					}
 				},
 				{
-					path: 'flag-icons',
-					name: 'flag-icons',
-					component: FlagIcons,
+					path: 'documentation',
+					name: 'documentation',
+					component: Documentation,
+					meta: {
+						auth: true,
+						layout: layouts.navLeft,
+						searchable: true,
+						title: 'Flag Icons',
+						tags: ['list', 'ui']
+					}
+				}
+			]
+		},
+		{
+			path: '/business',
+			name: 'business',
+			component: Business,
+			meta: {
+				auth: true,
+				layout: layouts.navLeft
+			},
+			children: [
+				{
+					path: 'profile',
+					name: 'profile',
+					component: BusinessProfile,
+					meta: {
+						auth: true,
+						layout: layouts.navLeft,
+						searchable: true,
+						title: 'Material Design Icons',
+						tags: ['material design']
+					}
+				},
+				{
+					path: 'team',
+					name: 'team',
+					component: Team,
+					meta: {
+						auth: true,
+						layout: layouts.navLeft,
+						searchable: true,
+						title: 'Flag Icons',
+						tags: ['list', 'ui']
+					}
+				},
+				{
+					path: 'preferences',
+					name: 'preferences',
+					component: Preferences,
 					meta: {
 						auth: true,
 						layout: layouts.navLeft,
