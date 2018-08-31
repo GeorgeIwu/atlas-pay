@@ -12,32 +12,33 @@
 		<el-menu-item index="/dashboard">
 			<i class="mdi mdi-home"></i><span slot="title">Home</span>
 		</el-menu-item>
-		<el-menu-item index="/timeline">
+		<el-menu-item index="/getting-started">
 			<i class="mdi mdi-check"></i><span slot="title">Getting Started</span>
 		</el-menu-item>
 		
 		<div class="el-menu-item-group__title"><span></span></div>
-		<el-menu-item index="/layout">
+		<el-menu-item index="/transactions">
 			<i class="mdi mdi-swap-horizontal"></i><span slot="title">Transactions</span>
 		</el-menu-item>
-		<el-menu-item index="/calendar">
+		<el-menu-item index="/balance">
 			<i class="mdi mdi-cash-multiple"></i><span slot="title">Balance</span>
 		</el-menu-item>
-		<el-menu-item index="/layout/flexbox">
+		<el-menu-item index="/customers">
 			<i class="mdi mdi-account-circle"></i><span slot="title">Customers</span>
 		</el-menu-item>
 		
 		<div class="el-menu-item-group__title"><span></span></div>
-		<el-menu-item index="/themes">
-			<i class="mdi mdi-credit-card-multiple"></i><span slot="title">Payment Pages</span>
-		</el-menu-item>
-		<el-menu-item index="/typography">
+		<el-menu-item index="/plans">
 			<i class="mdi mdi-black-mesa"></i><span slot="title">Plans</span>
 		</el-menu-item>
-		<el-menu-item index="/multi-language">
+		<el-menu-item index="/subscriptions">
 			<i class="mdi mdi-cast"></i><span slot="title">Subscriptions</span>
 		</el-menu-item>
-
+		<el-menu-item index="/payment-pages">
+			<!-- <i class="mdi mdi-credit-card-multiple"></i><span slot="title">Payment Pages</span> -->
+			<i class="mdi mdi-newspaper"></i><span slot="title">Payment Pages</span>
+		</el-menu-item>
+		
 		
 		<div class="el-menu-item-group__title"><span></span></div>
 		<div class="el-menu-item-group__title"><span></span></div>
@@ -64,6 +65,9 @@
 			</el-menu-item>
 			<el-menu-item index="/element/input-number">
 				<span slot="title">Team</span>
+			</el-menu-item>
+			<el-menu-item index="/element/input-number">
+				<span slot="title">Preferences</span>
 			</el-menu-item>
 		</el-submenu>
 

@@ -1,12 +1,6 @@
 <template>
 	<div class="footer flex align-center justify-space-between" :class="{'above':position === 'above'}">
-		<div><a href="https://pragmatic.ddmweb.it/docs/#/" target="_blank"><span class="hidden-xs-only">Documentation</span><span class="hidden-sm-and-up">Docs.</span></a></div>
-		<div>
-			<span>Made by <a href="https://ddmweb.it" target="_blank">Linko</a></span>
-			<a class="el-button buy-btn animated fadeInRight el-button--default el-button--small is-plain" href="https://themeforest.net/user/linko91/portfolio" target="_blank">
-				<i class="mdi mdi-cart"></i> Purchase <span class="hidden-xs-only">Pragmatic</span>
-			</a>
-		</div>
+		<span class="">Powered by <a href="https://atlas.money" target="_blank">AtlasMoney</a></span>
 	</div>
 </template>
 
@@ -26,7 +20,7 @@ export default {
 	height: 40px;
 	padding: 0 20px;
 	box-sizing: border-box;
-	background: white;
+	background: transparent;
 	margin-top: 2px;
 	font-size: 14px;
 	border-top-left-radius: 20px;

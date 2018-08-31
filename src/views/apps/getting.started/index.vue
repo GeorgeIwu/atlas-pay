@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/_variables';
+@import '../../../assets/scss/_variables';
 
 .timeline-box {
 	padding: 50px;

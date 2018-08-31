@@ -30,6 +30,12 @@
 			<el-popover ref="popover" placement="bottom" :width="popoverWidth" trigger="click">
 				<notification-box></notification-box>
 			</el-popover> -->
+			<el-switch
+				style="height: 20px"
+				v-model="liveMode"
+				active-color="#708090"
+				inactive-color="#D3D3D3">
+			</el-switch>
 			<el-badge :is-dot="true" class="notification-icon-badge">
 				<el-button v-popover:popover icon="mdi mdi-bell" class="notification-icon"></el-button>
 			</el-badge>
@@ -40,8 +46,8 @@
 				</span>
 				<el-dropdown-menu slot="dropdown">
 					<el-dropdown-item command="/profile"><i class="mdi mdi-account mr-10"></i> Profile</el-dropdown-item>
-					<el-dropdown-item command="/calendar"><i class="mdi mdi-calendar mr-10"></i> Calendar</el-dropdown-item>
-					<el-dropdown-item command="/contacts"><i class="mdi mdi-account-multiple mr-10"></i> Contacts</el-dropdown-item>
+					<!-- <el-dropdown-item command="/calendar"><i class="mdi mdi-calendar mr-10"></i> Calendar</el-dropdown-item> -->
+					<!-- <el-dropdown-item command="/contacts"><i class="mdi mdi-account-multiple mr-10"></i> Contacts</el-dropdown-item> -->
 					<el-dropdown-item command="/logout" divided><i class="mdi mdi-logout mr-10"></i> Logout</el-dropdown-item>
 				</el-dropdown-menu>
 			</el-dropdown>
@@ -64,7 +70,8 @@ export default {
 		return {
 			popoverWidth: 300,
 			fullscreen: false,
-			lang: 'us'
+			lang: 'us',
+			liveMode: false
 		}
 	},
 	methods: {
