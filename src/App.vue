@@ -134,6 +134,9 @@ export default {
 		},
 		splashScreen() {
 			return this.$store.getters.splashScreen
+		},
+		getToken() {
+			return this.$store.getters.getToken
 		}
 	},	
 	methods: {

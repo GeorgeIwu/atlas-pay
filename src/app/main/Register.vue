@@ -48,8 +48,8 @@ export default {
 	},
 	methods: {
 		login() {
-			this.$store.commit('setLogin')
-			this.$router.push('dashboard')
+			// this.$store.commit('setLogin')
+			// this.$router.push('dashboard')
 		}
 	}
 }

@@ -5,10 +5,10 @@
 				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
 				
 				<float-label class="styled">
-					<input type="email" placeholder="E-mail">
+					<input v-model="form.email" type="email" placeholder="E-mail">
 				</float-label>
 				<float-label class="styled">
-					<input type="password" placeholder="Password">
+					<input v-model="form.password" type="password" placeholder="Password">
 				</float-label>
 				
 				<div class="flex">
@@ -24,17 +24,17 @@
 
 				<div class="text-divider mv-10">or</div>
 
-				<div class="flex column center pt-10 pb-10">			
+				<!-- <div class="flex column center pt-10 pb-10">			
 					<el-button plain size="small" @click="login" class="social-btn google">
 						Log in with Google
 					</el-button>
 					<el-button plain size="small" @click="login" class="social-btn facebook">
 						Log in with Facebook
 					</el-button>
-				</div>
+				</div> -->
 
 				<div class="text-center signin-box pt-20">
-					Don't have an account? <a>Sign in</a>
+					Don't have an account? <a>Sign up</a>
 				</div>
 			</div>
 		</div>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex"
+
 export default {
 	name: 'Login',
 	data() {
@@ -52,12 +54,27 @@ export default {
 			}
 		}
 	},
+	computed: {
+	  	...mapGetters([ 
+			'getToken',
+			'isLogged',
+		]),
+	},
 	methods: {
+		...mapActions([
+			'loginUser'
+		]),
 		login() {
-			this.$store.commit('setLogin')
+			this.loginUser(this.form)
+		}
+	},
+	watch: {
+      'getToken': function (value, oldVal) {
+        if (value !== null && value !== undefined) {
 			this.$router.push('dashboard')
 		}
-	}
+	  }
+    }
 }
 </script>
 
