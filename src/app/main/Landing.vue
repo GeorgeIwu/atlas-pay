@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#">Dev Docs</a>
                     <a class="nav-link" href="#">Pricing</a>
                     <a class="nav-link" href="#">FAQs</a>
-                    <a class="nav-link login-nav-link" href="/atlaspay/login">Login</a>
+                    <a class="nav-link login-nav-link" href="/login">Login</a>
                 </nav>
             </section>
 
@@ -475,8 +475,12 @@
  import '../../assets/assetsLanding/page.min.css'
 
 export default {
-       name: 'landing',
-  }
+    name: 'landing',
+    created() {
+        // require('../../assets/assetsLanding/page.min.css');
+        // vm.$forceUpdate();
+	},	
+}
 </script>
 
 <style lang='scss' scoped>

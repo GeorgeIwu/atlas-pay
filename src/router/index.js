@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-//landing
-import Landing from '../app/landing/index.vue'
+//pages
+import Landing from '../app/main/Landing.vue'
+import Login from '../app/main/Login.vue'
+import Register from '../app/main/Register.vue'
+import ForgotPassword from '../app/main/ForgotPassword.vue'
+import NotFound from '../app/main/NotFound.vue'
 
 //apps
 import Dashboard from '../app/dashboard/index.vue'
@@ -14,24 +18,15 @@ import Plans from '../app/plans/index.vue'
 import Subscriptions from '../app/subscriptions/index.vue'
 import PaymentPages from '../app/payment.pages/index.vue'
 import Profile from '../app/profile/index.vue'
-
 //developers
 import Developers from '../app/developers/index.vue'
 import APIs from '../app/developers/APIs.vue'
 import Documentation from '../app/developers/Documentation.vue'
-
-//Business
+//business
 import Business from '../app/business/index.vue'
 import Preferences from '../app/business/Preferences.vue'
 import BusinessProfile from '../app/business/Profile.vue'
 import Team from '../app/business/Team.vue'
-
-//pages
-import Login from '../app/main/Login.vue'
-import Register from '../app/main/Register.vue'
-import ForgotPassword from '../app/main/ForgotPassword.vue'
-import NotFound from '../app/main/NotFound.vue'
-
 
 import layouts from '../layout'
 import store from '../store'
@@ -261,7 +256,7 @@ const router = new Router({
 			path: '/logout',
 			beforeEnter (to, from, next) {
 				auth.logout()
-				next({path:'/login'})
+				next({path:'/'})
 			}
 		},
 		{
@@ -327,9 +322,11 @@ router.beforeEach((to, from, next) => {
 			next()
 		}
 	} else {
-		if(auth.loggedIn() && to.name === 'login'){
-			window.location.href = '/'
-			return false
+		if(auth.loggedIn() && (to.name === 'login' || to.name === 'landing')){
+			next({path:'/dashboard'})
+			l.navLeft()
+			// window.location.href = '/dashboard'
+			return true
 		} else {
 			next()
 		}
