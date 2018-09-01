@@ -1,4 +1,10 @@
 export default {
+	landing: {
+		navPos: false,
+		toolbar: false,
+		toolbarPos: false,
+		footer: false
+	},
 	contenOnly: {
 		navPos: false,
 		toolbar: false,

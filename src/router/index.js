@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+//landing
+import Landing from '../app/landing/index.vue'
+
 //apps
 import Dashboard from '../app/dashboard/index.vue'
 import GettingStarted from '../app/getting.started/index.vue'
@@ -41,7 +44,15 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
-			alias: '/dashboard',
+			alias: '/landing',
+			name: 'landing',
+			component: Landing,
+			meta: {
+				layout: layouts.landing,
+			}
+		},
+		{
+			path: '/dashboard',
 			name: 'dashboard',
 			component: Dashboard,
 			meta: {

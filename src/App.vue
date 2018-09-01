@@ -1,5 +1,11 @@
 <template>
-	<div class="layout-container flex justify-center" :class="{
+	<!-- <div class="layout-container flex justify-center" :class="{ -->
+	<div :class="{
+		'layout-container': !landing,
+		'flex': !landing,
+		'justify-center': !landing,
+		'body-defaults': landing,
+
 		'column':navPos === 'top' || navPos === 'bottom', 
 		'boxed':boxed, 
 		'footer-above':footer === 'above',
@@ -23,7 +29,14 @@
 			@push-page="closeSidebar" 
 			v-if="navPos === 'left'"/>
 
-		<div class="container flex column box grow">
+		<!-- <div class="container flex column box grow"> -->
+		<div :class="{
+			'container': !landing,
+			'flex': !landing,
+			'column': !landing,
+			'box': !landing,
+			'grow': !landing,
+			}">
 
 			<div class="header" v-if="toolbar === 'top'">
 				<Toolbar @toggle-sidebar="openSidebar = !openSidebar" :menu-burger="navPos"/>
@@ -33,13 +46,24 @@
 				<Toolbar @toggle-sidebar="openSidebar = !openSidebar" :menu-burger="navPos"/>
 			</div>
 
-			<div class="main box grow flex">
+			<!-- <div class="main box grow flex"> -->
+			<div :class="{
+				'main': !landing,
+				'box': !landing,
+				'grow': !landing,
+				'flex': !landing,
+				}">
 				<span class="main-out-border--top-left" v-if="roundedCorners"></span>
 				<span class="main-out-border--top-right" v-if="roundedCorners"></span>
 				<span class="main-out-border--bottom-left" v-if="roundedCorners"></span>
 				<span class="main-out-border--bottom-right" v-if="roundedCorners"></span>
 				<transition :name="viewAnimation" mode="out-in">
-					<router-view class="view box grow"/>
+					<!-- <router-view class="view box grow"/> -->
+					<router-view :class="{
+						'view': !landing,
+						'box': !landing,
+						'grow': !landing,
+						}"/>
 				</transition>
 			</div>
 
@@ -79,7 +103,8 @@ export default {
 		return {
 			collapseNav: false,
 			openSidebar: false,
-			innerWidth: 0
+			innerWidth: 0,
+			landing: false
 		}
 	},
 	computed: {
@@ -130,6 +155,9 @@ export default {
 		LayoutPicker
 	},
 	created() {
+		// check if 'landing' is the current route
+		this.$router.currentRoute.name == 'landing' ? this.landing = true : this.landing
+
 		if(browser.name)
 			document.getElementsByTagName("html")[0].classList.add(browser.name)
 	},
