@@ -289,19 +289,16 @@ const l = {
 //insert here login logic
 const auth = {
 	loggedIn() {
-		return store.getters.isLogged
+		return store.getters.getToken
 	},
 	logout() {
-		store.commit('setLogout')
+		store.commit('resetState')
 	}
 }
 
 router.beforeEach((to, from, next) => {
 	let authrequired = false
-	if(to && to.meta && to.meta.auth)
-		authrequired = true
-
-	//console.log('authrequired', authrequired, to.name)
+	if(to && to.meta && to.meta.auth) {authrequired = true}
 
 	if(authrequired) {
 		if(auth.loggedIn()) {

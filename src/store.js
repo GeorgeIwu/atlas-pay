@@ -9,7 +9,7 @@ Vue.use(Vuex)
 const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-	plugins: [createPersistedState({paths: ['layout']})],
+	plugins: [createPersistedState()],
 	modules: {
 		main,
 		transactions,
