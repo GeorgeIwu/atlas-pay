@@ -1,359 +1,413 @@
 <template>
-	<vue-scroll class="page-typography">
+	<div class="page-table column scrollable only-y" :class="{'flex':!isMobile, 'overflow':isMobile}">
 		<div class="page-header">
-			<h1>Typography</h1>
+			<h1>V2 Table</h1>
+			<h4>for a better experience on Mac OS during horizontal scroll is prefered disable the "Swipe between pages" option </h4>
 			<el-breadcrumb separator="/">
 				<el-breadcrumb-item :to="{ path: '/' }"><i class="mdi mdi-home-outline"></i></el-breadcrumb-item>
-				<el-breadcrumb-item>UI</el-breadcrumb-item>
-				<el-breadcrumb-item>Typography</el-breadcrumb-item>
+				<el-breadcrumb-item>Components</el-breadcrumb-item>
+				<el-breadcrumb-item>Tables</el-breadcrumb-item>
+				<el-breadcrumb-item>V2 Table</el-breadcrumb-item>
 			</el-breadcrumb>
 		</div>
-		<div class="card-base card-shadow--medium p-30">
-			<el-tabs>
-				<el-tab-pane label="Headers">
-					<div class="flex center demo-box">
-						<div class="left-box">big header 1</div>
-						<div class="right-box box grow"><h1 class="h-big">Lorem ipsum dolor sit amet</h1></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">big header 2</div>
-						<div class="right-box box grow"><h2 class="h-big">Lorem ipsum dolor sit amet</h2></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">big header 3</div>
-						<div class="right-box box grow"><h3 class="h-big">Lorem ipsum dolor sit amet</h3></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">header 1</div>
-						<div class="right-box box grow"><h1>Lorem ipsum dolor sit amet</h1></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">header 2</div>
-						<div class="right-box box grow"><h2>Lorem ipsum dolor sit amet</h2></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">header 3</div>
-						<div class="right-box box grow"><h3>Lorem ipsum dolor sit amet</h3></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">subheader 4</div>
-						<div class="right-box box grow"><h4>Lorem ipsum dolor sit amet</h4></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">subheader 5</div>
-						<div class="right-box box grow"><h5>Lorem ipsum dolor sit amet</h5></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">subheader 6</div>
-						<div class="right-box box grow"><h6>Lorem ipsum dolor sit amet</h6></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">paragraph</div>
-						<div class="right-box box grow"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p></div>
-					</div>
-				</el-tab-pane>
-				<el-tab-pane label="Text elements">
-					<div class="flex center demo-box mt-20">
-						<div class="left-box">blockquote</div>
-						<div class="right-box box grow">
-							<blockquote>
-								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
-								</p>
-								<small class="secondary-text"> Lorem ipsum, Lorem ipsum </small>
-							</blockquote>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">blockquote reverse</div>
-						<div class="right-box box grow">
-							<blockquote class="reverse">
-								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
-								</p>
-								<small class="secondary-text"> Lorem ipsum, Lorem ipsum </small>
-							</blockquote>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">code</div>
-						<div class="right-box box grow"><pre>import Vue from 'vue'</pre></div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">definition lists</div>
-						<div class="right-box box grow">
-							<dl>
-								<dt>Definition term</dt>
-								<dd>This is the definition description</dd>
 
-								<dt>Another definition term</dt>
-								<dd>This is another definition description</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">definition lists horizontal</div>
-						<div class="right-box box grow">
-							<dl class="horizontal">
-								<dt>Definition term</dt>
-								<dd>This is the definition description</dd>
-
-								<dt>Another definition term</dt>
-								<dd>This is another definition description</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">unordered list</div>
-						<div class="right-box box grow">
-							<ul><li>List Item</li> <li>List Item<ul><li>List Item</li> <li>List Item</li> <li>List Item</li></ul></li> <li>List Item</li></ul>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">ordered list</div>
-						<div class="right-box box grow">
-							<ol><li>List Item</li> <li>List Item<ol><li>List Item</li> <li>List Item</li> <li>List Item</li></ol></li> <li>List Item</li></ol>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">unstyled list</div>
-						<div class="right-box box grow">
-							<ul class="list-unstyled"><li>List Item</li> <li>List Item</li> <li>List Item</li></ul>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">anchor</div>
-						<div class="right-box box grow">
-							a <a>link</a>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">abbreviation</div>
-						<div class="right-box box grow">
-							<abbr title="HyperText Markup Language">HTML</abbr>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">highlight</div>
-						<div class="right-box box grow">
-							a <mark>highlighted</mark> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">strike-through</div>
-						<div class="right-box box grow">
-							a <s>strike-through</s> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">underline</div>
-						<div class="right-box box grow">
-							an <u>underlined</u> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">selected</div>
-						<div class="right-box box grow">
-							a <span class="text-selected">selected</span> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">small</div>
-						<div class="right-box box grow">
-							a <small>small</small> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">strong</div>
-						<div class="right-box box grow">
-							a <strong>strong</strong> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">italic</div>
-						<div class="right-box box grow">
-							an <em>italic</em> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">super</div>
-						<div class="right-box box grow">
-							a <sup>super</sup> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">sub</div>
-						<div class="right-box box grow">
-							a <sub>sub</sub> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">capitalized</div>
-						<div class="right-box box grow">
-							a <span class="text-capitalized">capitalized</span> text
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">lowercase</div>
-						<div class="right-box box grow">
-							A <span class="text-lowercase">lowercase</span> TEXT
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">uppercase</div>
-						<div class="right-box box grow">
-							an <span class="text-uppercase">uppercase</span> text
-						</div>
-					</div>
-				</el-tab-pane>
-				<el-tab-pane label="Helpers" class="pt-20">
-					<div class="text-divider" style=" margin-top: 0; ">LIST</div>
-					<div class="flex center demo-box">
-						<div class="left-box">unordered styled list</div>
-						<div class="right-box box grow"> 
-							<ul class="styled"><li>List Item</li> <li>List Item<ul><li>List Item</li> <li>List Item</li> <li>List Item</li></ul></li> <li>List Item</li></ul>
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">ordered styled list</div>
-						<div class="right-box box grow"> 
-							<ol class="styled"><li>List Item</li> <li>List Item<ol><li>List Item</li> <li>List Item</li> <li>List Item</li></ol></li> <li>List Item</li></ol>
-						</div>
-					</div>
-					<div class="text-divider">COLORS</div><br>				
-					<div class="flex center demo-box" v-for="i in textColors" :key="i">
-						<div class="left-box">{{i}}</div>
-						<div class="right-box box grow"> 
-							<span :class="i">Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
-						</div>
-					</div>
-					<br><div class="text-divider">FONT WEIGHT</div><br>									
-					<div class="flex center demo-box" v-for="i in fontWeight" :key="i">
-						<div class="left-box">{{i}}</div>
-						<div class="right-box box grow"> 
-							<span :class="i">Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
-						</div>
-					</div>
-					<br><div class="text-divider">FONT SIZE ( from <strong class="mh-7">1px</strong> to <strong class="mh-7">200px</strong> )</div><br>									
-					<div class="flex center demo-box" v-for="(i, index) in fontSize" :key="i">
-						<div class="left-box">font-size-{{10 + index}}</div>
-						<div class="right-box box grow"> 
-							<span :class="'font-size-'+(10 + index)">Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
-						</div>
-					</div>
-					<br><div class="text-divider">LINE HEIGHT ( from <strong class="mh-7">1px</strong> to <strong class="mh-7">200px</strong> )</div><br>									
-					<div class="flex center demo-box" v-for="(i, index) in lineHeight" :key="i">
-						<div class="left-box">line-height-{{30 + index}}</div> 
-						<div class="right-box box grow"> 
-							<span :class="'line-height-'+(30 + index)">Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
-						</div>
-					</div>
-					<div class="text-divider">TEXT ALIGN</div><br>				
-					<div class="flex center demo-box">
-						<div class="left-box">text-left</div>
-						<div class="right-box box grow text-left"> 
-							text align left
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">text-center</div>
-						<div class="right-box box grow text-center"> 
-							text align center
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">text-right</div>
-						<div class="right-box box grow text-right"> 
-							text align right
-						</div>
-					</div>
-					<div class="flex center demo-box">
-						<div class="left-box">text-truncate</div>
-						<div class="right-box box grow text-truncate"> 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet mi vel semper venenatis. Integer eget convallis libero, sit amet tristique est. Sed lacinia massa eget erat facilisis, et pulvinar arcu pharetra. Morbi gravida metus et turpis efficitur bibendum. Praesent tortor leo, finibus et finibus in, malesuada vel massa. Aliquam erat volutpat. Etiam efficitur lectus sit amet odio tempus, quis tempor enim molestie.
-						</div>
-					</div>
-				</el-tab-pane>
-			</el-tabs>		
+		<div class="toolbar-box flex">
+			<div class="search-box box grow">
+				<div><i class="mdi mdi-magnify"></i></div>
+				<input v-model="search" placeholder="Search..."/>
+			</div>
+			<div class="pagination-box animated fadeInRight">
+				<div class="select-box">
+					<el-select v-model="paginationInfo.pageSize" placeholder="Rows per page" size="mini">
+						<el-option value="10" label="10"></el-option>
+						<el-option value="15" label="15"></el-option>
+						<el-option value="20" label="20"></el-option>
+						<el-option value="30" label="30"></el-option>
+						<el-option value="50" label="50"></el-option>
+						<el-option value="100" label="100"></el-option>
+					</el-select>
+				</div>
+				<div class="label">/page</div>
+			</div>
+			<div class="csv-box animated fadeInRight">
+				<button @click="downloadCSV">download csv ({{total}})</button>
+			</div>
+			<div class="animated fadeInRight"><a href="https://github.com/dwqs/v2-table" target="_blank"><i class="mdi mdi-link-variant"></i> reference</a></div>
 		</div>
-	</vue-scroll>
+
+		<resize-observer @notify="handleResize" />
+		
+		<div class="table-box card-base card-shadow--medium box grow" id="table-wrapper" v-loading="!asyncComponent">
+			<div :style="{ 'width': width + 'px' }">
+				<!-- v2-table -->
+				<component :is="asyncComponent" ref="table"
+				 	:data="listInPage"
+					:height="height"
+					:border="false"
+					:total="total"
+					:lazy-load="false"
+					:loading="loading"
+					class="styled"
+					:class="{'mobile':isMobile}"
+					@page-change="handlePageChange"
+					:pagination-info="paginationInfo"
+					:default-sort="{prop:sortingProp, order:sortingOrder}"
+					@sort-change="handleSortChange"
+					@select-change="handleSelectChange"
+					:show-summary="showSummary"
+					:shown-pagination="shownPagination">
+					<v2-table-column type="selection" width="45"></v2-table-column>
+					<v2-table-column label="Name" prop="full_name" sortable width="200" align="left" :fixed="isMobile?'':'left'">
+						<template slot-scope="row">
+							<span class="sel-string" v-html="$options.filters.selected(row.full_name, search)"></span>
+						</template>
+					</v2-table-column>
+					<v2-table-column label="Birthday" prop="birth_day" sortable width="100" :fixed="isMobile?'':'right'"></v2-table-column>
+					<v2-table-column label="Email" prop="email" sortable width="250">
+						<template slot-scope="row">
+							<span class="sel-string" v-html="$options.filters.selected(row.email, search)"></span>
+						</template>
+					</v2-table-column>
+					<v2-table-column label="Gender" prop="gender" sortable></v2-table-column>
+					<v2-table-column label="Job title" prop="job_title" sortable width="200"></v2-table-column>
+					<v2-table-column label="Company" prop="company" sortable width="120"></v2-table-column>
+					<v2-table-column label="City" prop="city" sortable width="200"></v2-table-column>
+					<v2-table-column label="Country" prop="country" sortable></v2-table-column>
+					<v2-table-column label="Address" prop="street_address" sortable>
+						<template slot-scope="row">
+							<div class="custom-action-row">
+								<el-tooltip class="item" effect="dark" :content="row.street_address" placement="left">
+									<span>{{row.street_address}}</span>
+								</el-tooltip>
+							</div> 
+						</template>
+					</v2-table-column>
+					<v2-table-column label="Phone" prop="phone" sortable width="150"></v2-table-column>
+					<v2-table-column label="Username" prop="username" sortable width="200"></v2-table-column>
+					<v2-table-column label="Action" width="70" :fixed="isMobile?'':'right'">
+						<template slot-scope="row">
+							<div class="custom-action-row">
+								<el-button @click="print(row)"><i class="mdi mdi-eye"></i></el-button>
+							</div> 
+						</template>
+					</v2-table-column>
+				</component><!-- v2-table -->
+
+			</div>
+        </div>
+	</div>
 </template>
 
 <script>
+import users from '@/assets/data/USERS_MOCK_DATA.json'
+import moment from 'moment-timezone'
+import Papa from 'papaparse'
+import * as FS from 'file-saver'
+
 export default {
-	name: 'Typography',
-	data() {
-		return {
-			textColors: [
-				'primary-text',
-				'secondary-text',
-				'hint-text',
-				'accent-text',
-				'black-text',
-				'success-text',
-				'warning-text',
-				'danger-text',
-				'info-text',
-				'success-light-text',
-				'warning-light-text',
-				'danger-light-text',
-				'info-light-text',
-			],
-			fontWeight: [
-				'font-weight-100',
-				'font-weight-200',
-				'font-weight-300',
-				'font-weight-400',
-				'font-weight-500',
-				'font-weight-600',
-				'font-weight-700',
-				'font-weight-800',
-				'font-weight-900'
-			],
-			fontSize: Array(11),
-			lineHeight: Array(11)
+	name: 'V2TablePage',
+	data () {
+      	return {
+			isMobile: false,
+			asyncComponent: null,
+			width: 0,
+			height: 'auto',
+			currentPage: 1,
+			loading: false,
+			shownPagination: true,
+			showSummary: false,
+			search: '',
+			paginationInfo: {
+				//text: `<span><strong>20</strong> per page</span>`,
+				pageSize: 20,
+				nextPageText: '›',
+				prevPageText: '‹' 
+			},
+			sortingProp: "birth_day", 
+			sortingOrder: "descending",
+			list: users
 		}
+	},
+	computed: {
+		listFiltered() {
+			return this.list.filter((obj) => {
+				let ctrl = false
+				for(let k in obj) {
+					if(obj[k] && obj[k].toString().toLowerCase().indexOf(this.search.toLowerCase()) !== -1) ctrl = true
+				}
+				return ctrl
+			})
+		},
+		listSortered() {
+			let prop = this.sortingProp
+			let order = this.sortingOrder
+			return [].concat(this.listFiltered.sort((item1, item2) => {
+				let val1 = '';
+				let val2 = '';
+
+				/*if (prop === 'formatted_date') {
+					val1 = parseInt(moment(item1[prop], 'DD/MM/YYYY').format('x'))
+					val2 = parseInt(moment(item2[prop], 'DD/MM/YYYY').format('x'))
+					if (order === 'descending') {
+						return val2 < val1 ? -1 : 1
+					}
+					return val1 < val2 ? -1 : 1
+				}*/
+
+				val1 = item1[prop];
+				val2 = item2[prop]
+				if (order === 'descending') {
+					return val2 < val1 ? -1 : 1
+				}
+				return val1 < val2 ? -1 : 1
+			}))
+		},
+		listInPage() {
+			let from = (this.currentPage - 1) * this.pageSize
+			let to = from + (this.pageSize*1)
+			return this.listSortered.slice(from, to)
+		},
+		total() {
+			return this.listFiltered.length
+		},
+		pageSize() {
+			return this.paginationInfo.pageSize
+		}
+	},
+	watch: {
+		total(val) {
+			this.updatePaginationText()
+		},
+		asyncComponent(val) {
+			this.updatePaginationText()
+		},
+		pageSize(val) {
+			this.asyncComponent = null
+			this.currentPage = 1
+
+			setTimeout(() => {
+				this.asyncComponent = 'v2-table'
+			}, 500);
+		},
+		search(val) {
+			this.currentPage = 1
+		},
+		currentPage(val) {
+			this.$refs.table.curPage = val
+		}
+	},
+    methods: {
+		updatePaginationText() {
+			this.paginationInfo.text = `<span>Total of <strong>${this.total}</strong>, <strong>${this.paginationInfo.pageSize}</strong> per page</span>`
+		},
+		handlePageChange(page) {
+			this.currentPage = page
+		},
+		handleSortChange( {prop, order} ) {
+			this.sortingProp = prop
+			this.sortingOrder = order
+		},
+		handleSelectChange (rows) {
+			console.log('handleSelectChange', rows);
+		},
+		downloadCSV() {
+			var dataCSV = Papa.unparse(this.listFiltered, {header: true});
+			const blob = new Blob([dataCSV], {type: 'text/csv;charset=utf-8'})
+			FS.saveAs(blob, 'list.csv')
+		},
+		print(row) {
+			let message = ''
+
+			for(let k in row) {
+				message += k+': <strong>'+row[k]+'</strong><br>'
+			}
+			
+			this.$alert(message, row.full_name || 'Message', {
+				dangerouslyUseHTMLString: true 
+			});
+		},
+		calcDims() {
+			this.width = document.getElementById('table-wrapper').clientWidth
+
+			if(!this.isMobile) {
+				this.height = document.getElementById('table-wrapper').clientHeight - 40
+				if(this.showSummary) this.height -= 40
+				if(this.shownPagination) this.height -= 40
+			}
+
+			this.asyncComponent = 'v2-table'
+		},
+		handleResize: _.throttle(function (e) {
+			this.asyncComponent = null
+			this.width = 0
+			this.currentPage = 1
+			setTimeout(this.calcDims,1000)
+		}, 500)
+	},
+	filters: {
+		selected: function (value, sel) {
+			if (!value) return ''
+			if (!sel) return value
+			return value.toString().replace(new RegExp(sel,"gim"), `<span class="sel">${sel}</span>`)
+		}
+	},
+	created() {
+		if(window.innerWidth <= 768) 
+			this.isMobile = true	
+
+		this.updatePaginationText()
+	},
+	mounted() {
+		//ie fix
+		if(!window.Number.parseInt) window.Number.parseInt = parseInt
+		
+		this.calcDims()
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/scss/_variables';
+.page-table {
+	&.overflow {
+		overflow: auto;
+	}
+	
+	.table-box {
+		overflow: hidden;
+	}
+}
+</style>
+<style lang="scss">
+@import '../../assets/scss/_variables';
+.page-table {
+	.custom-action-row {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 
-.card-base {
-	.text-divider {
-		margin-top: 80px;
-		margin-bottom: 5px;
+		.el-button {
+			padding: 1px 5px;
+		}
 	}
 
-	.demo-box {
-		margin-bottom: 40px;
+	.toolbar-box {
+		margin-top: 20px;
 
-		.left-box {
-			width: 200px;
-			padding: 20px 40px;
-			box-sizing: border-box;
-			text-align: right;
-			color: transparentize($text-color, 0.5);
+		.search-box {
+			& > div {
+				width: 20px;
+				display: inline-block;
+			}
+
+			margin-bottom: 10px;
+
+			i {
+				display: inline-block;
+				width: 22px;
+			}
+
+			input {
+				outline: none;
+				background: transparent;
+				border: none;
+				font-size: 15px;
+				position: relative;
+				padding: 0;
+				margin-left: -20px;
+				display: inline-block;
+				padding-left: 20px;
+				box-sizing: border-box;
+				top: -1px;
+				width: 100%;
+				color: $text-color;
+			}
+
+			.icons-tot {
+				margin-right: 20px;
+			}
+		}
+
+		.pagination-box {
+			width: 120px;
+			margin: 0 15px;
+
+			.select-box {
+				width: 70px;
+				display: inline-block;
+			}
+
+			.label {
+				width: 50px;
+				display: inline-block;
+			}
+
+			.el-input__inner {
+				height: 22px;
+				border: none;
+				background: transparent;
+				font-size: 16px;
+				text-align: right;
+				font-family: inherit;
+				padding-right: 20px;
+				color: $text-color;
+			}
+
+			.el-input__suffix {
+				right: -3px;
+
+				.el-select__caret {
+					color: transparentize($text-color, 0.7);
+				}
+			}
+		}
+
+		a, button {
+			padding: 0;
+			margin: 0 15px;
+			background: transparent;
+			border: none;
+			outline: none;
+			font-family: inherit;
+			font-size: inherit;
+			cursor: pointer;
+
+			border-bottom: 1px solid;
+			text-decoration: none;
+			color: $text-color;
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		a {
+			margin-right: 0;
+		}
+	}
+
+	.sel-string {
+		.sel {
+			background: transparentize($text-color, 0.8);
+			border-radius: 5px;
+			text-transform: uppercase;
 		}
 	}
 }
 
 @media (max-width: 768px) {
-	.card-base {
-		.demo-box {
+	.page-table {
+		.toolbar-box {
 			display: block;
 			overflow: hidden;
-
-			.left-box {
-				text-align: left;
-				padding: 30px 0;
-				padding-bottom: 15px;
-			}
-
-			.left-box, .right-box {
-				width: 100%;
-				display: block;
+			font-size: 80%;
+		
+			& > * {
+				display: inline-block;
+				min-width: 120px;
+				height: 22px;
+				background: rgba(0, 0, 0, 0.04);
+				padding: 4px;
+				margin: 3px !important;
 			}
 		}
 	}
