@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="table-box card-base card-shadow--medium">
-			<el-table :data="tableData" style="width: 100%" height="600">
+			<el-table :data="tableData" style="width: 100%" height="570">
 				<el-table-column
 					prop="date"
 					label="Date"
