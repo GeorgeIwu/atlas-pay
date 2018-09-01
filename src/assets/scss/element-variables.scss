@@ -16,6 +16,33 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import "~element-ui/packages/theme-chalk/src/index";
 @import "~element-ui/packages/theme-chalk/src/display";
 
+.el-pager li { 
+	background-color: transparent;
+	line-height: 50px;
+}
+
+.el-pager li.btn-quickprev {
+	padding-top: 10px;
+}
+
+.el-pager li.btn-quicknext {
+	padding-top: 10px;
+}
+
+.el-pagination .btn-next { 
+	background-color: transparent;
+	padding-top: 18px;
+}
+
+.el-pagination .btn-prev { 
+	background-color: transparent;
+	padding-top: 18px;
+}
+
+.el-pagination button:disabled {
+	background-color: transparent;
+}
+
 .el-form--label-top .el-form-item__label {
 	padding: 0;
 	line-height: 30px;

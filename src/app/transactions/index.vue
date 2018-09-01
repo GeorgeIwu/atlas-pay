@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="table-box card-base card-shadow--medium">
-			<el-table :data="tableData" style="width: 100%" height="570">
+			<el-table :data="tableData" style="width: 100%;" height="513">
 				<el-table-column
 					prop="date"
 					label="Date"
@@ -53,7 +53,14 @@
 					</template>
 				</el-table-column>
 			</el-table>
-        </div>
+			<el-pagination
+				class="pagination flex justify-flex-end"
+				layout="prev, pager, next"
+				:page-size="20"
+				:pager-count="11"
+				:total="1000">
+			</el-pagination>
+		</div>
 	</div>
 </template>
 
@@ -107,5 +114,22 @@ export default {
 .table-box {
 	overflow: auto;
 }
+
+.pagination {
+	height: 55px; 
+	text-align: right;
+	background-color: rgba(243,247,250,.5);
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.el-pager li { 
+	background-color: transparent;
+}
+
+// .el-pagination .el-pager li { 
+// 	background-color: transparent;
+// }
+
 </style>
 
