@@ -24426,6 +24426,7 @@ body:not(.body-scrolled) .topbar.d-flex~.navbar {
     /* position: fixed */
     position: relative;
     top: 0px;
+    background: #3f61c7
 }
 
 .navbar-scrolled [data-navbar="fixed"] {
