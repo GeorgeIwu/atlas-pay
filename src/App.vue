@@ -67,12 +67,16 @@
 				</transition>
 			</div>
 
-			<horizontal-nav :position="navPos" @push-page="closeSidebar" v-if="navPos === 'bottom'" style="margin-bottom:0;"/>
+			<horizontal-nav 
+				:position="navPos" 
+				@push-page="closeSidebar" 
+				v-if="navPos === 'bottom'" 
+				style="margin-bottom:0;"/>
 			
 			<Footer v-if="footer === 'below'" :position="footer"/>
 		</div>
 
-		<vertical-nav 
+		<vertical-nav
 			:position="navPos" 
 			:collapse-nav="collapseNav" 
 			:open-sidebar.sync="openSidebar" 
@@ -89,6 +93,7 @@
 
 <script> 
 import { detect } from 'detect-browser'
+import { mapGetters, mapActions } from "vuex"
 const browser = detect()
 // @ is an alias to /src
 import HorizontalNav from '@/core/horizontal-nav.vue'
@@ -108,6 +113,11 @@ export default {
 		}
 	},
 	computed: {
+		...mapGetters([ 
+			'getBusinesses',
+			'getBusiness',
+			'getBusinessTokens'
+		]),
 		navPos() {
 			if(this.innerWidth <= 768 && (this.$store.getters.navPos === 'top' || this.$store.getters.navPos === 'bottom')) {
 				return 'left'	
@@ -137,9 +147,22 @@ export default {
 		},
 		getToken() {
 			return this.$store.getters.getToken
-		}
+		},
 	},	
 	methods: {
+		...mapActions([
+			'fetchBusinesses',
+			'fetchBusiness',
+			'createBusiness',
+			'fetchTokens',
+			'fetchTeam',
+			'fetchPreferences',
+			'fetchCustomers',
+			'fetchTransactions',
+			'fetchPlans',
+			'fetchPaymentPages',
+			'logoutUser'
+		]),
 		resizeOpenNav() {
 			this.innerWidth = window.innerWidth
 			if(window.innerWidth <= 768) {
@@ -159,6 +182,7 @@ export default {
 	},
 	created() {
 		// check if 'landing' is the current route
+		// this.fetchBusinesses();
 		this.$router.currentRoute.name == 'landing' ? this.landing = true : this.landing
 
 		if(browser.name)
@@ -170,7 +194,24 @@ export default {
 	},
 	beforeDestroy() {
 		window.removeEventListener('resize', this.resizeOpenNav);
-	}
+	},
+	watch: {
+      'getBusiness': function (value, oldVal) {
+        if (value !== null && value !== undefined) {
+				this.fetchTokens(this.getBusiness);
+				this.fetchTeam(this.getBusiness);
+				this.fetchPreferences(this.getBusiness);
+				// this.fetchTransactions({merchantUUID: this.getBusiness.uuid});
+		}
+	  },
+	  'getBusinessTokens.test': function (value, oldVal) {
+        if (value !== null && value !== undefined) {
+			// this.fetchPaymentPages(this.getBusiness);
+			// this.fetchCustomers();
+			// this.fetchPlans();
+		}
+      },
+    }
 }
 </script>
 

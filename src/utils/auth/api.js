@@ -10,9 +10,9 @@ const getHost = type => {
 
 const getHeader = type => {
     return type === 'auth' 
-        ? { headers: { 'Content-Type': 'application/json' , 'Authorization': 'Bearer ' + store.state.account.user.token  } }
+        ? { headers: { 'Content-Type': 'application/json' , 'Authorization': 'Bearer ' + store.getters.getToken  } }
         : type === 'business' 
-            ? { auth: { 'username': store.state.account.tokens.test.public_key, 'password': store.state.account.tokens.test.secret_key } }
+            ? { auth: { 'username': store.getters.getBusinessTokens.test.public_key, 'password': store.getters.getBusinessTokens.test.secret_key } }
             : { headers: { 'Content-Type': 'application/json'} }
 }
   

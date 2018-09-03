@@ -5,7 +5,7 @@
 		<div class="app-name" @click="goto('/')">
 			<!-- <span style="color: #5f8fdf">Atlas</span>
 			<span style="color: light-grey">Pay</span> -->
-			<el-select style="background-color: transparent;" v-model="merchant.name" placeholder="Select">
+			<!-- <el-select style="background-color: transparent;" v-model="merchant.name" placeholder="Select">
 				<el-option
 					style="background-color: transparent;"
 					v-for="item in [{ label: 'Unnamed account'}]"
@@ -13,7 +13,17 @@
 					:label="item.label"
 					:value="item.label">
 				</el-option>
-			</el-select>
+			</el-select> -->
+			
+			<el-select style="background-color: transparent;" @change="fetchBusiness"  v-model="business" placeholder="Select" :default-first-option="true" >
+                <el-option
+                    style="background-color: transparent;"
+                    v-for="item in getBusinesses"
+                    :key="item.uuid"
+                    :label="item.company_name"
+                    :value="item.uuid">
+                </el-option>
+            </el-select>
 		</div>
 		<button class="collapse-nav" @click="collapseNavToggle">
 			<i class="mdi mdi-menu"></i>
@@ -23,6 +33,8 @@
 
 
 <script>
+import { mapGetters, mapActions } from "vuex"
+
 export default {
 	name: 'Logo',
 	props: ['collapseNav', 'mode'],
@@ -30,16 +42,31 @@ export default {
 		return {
 			merchant: {
 				name: 'Unnamed account'
-			}
+			},
+			business: this.getBusiness
 		}
 	},
 	methods: {
+		...mapActions([
+			'fetchBusinesses',
+            'fetchBusiness',
+            'createBusiness',
+        ]),
 		collapseNavToggle() {
 			this.$emit('collapse-nav-toggle')
 		},
 		goto(index, indexPath) {
 			this.$router.push(index)
 		}
+	},
+	computed: {
+		 ...mapGetters([ 
+            'getBusinesses',
+            'getBusiness'
+        ]),
+	},
+	mounted() {
+		this.fetchBusinesses()
 	}
 }
 </script>
