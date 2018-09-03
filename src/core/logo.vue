@@ -18,12 +18,14 @@
 			<el-select style="background-color: transparent;" @change="fetchBusiness"  v-model="business" placeholder="Select" :default-first-option="true" >
                 <el-option
                     style="background-color: transparent;"
-                    v-for="item in getBusinesses"
+                    v-for="item in (getBusinesses.length > 0 ? getBusinesses : [{company_name: 'Unnamed account', uuid: 0}])"
                     :key="item.uuid"
                     :label="item.company_name"
                     :value="item.uuid">
                 </el-option>
             </el-select>
+			<!-- {{ 'business' }} -->
+			<!-- {{ business }} -->
 		</div>
 		<button class="collapse-nav" @click="collapseNavToggle">
 			<i class="mdi mdi-menu"></i>
@@ -40,10 +42,7 @@ export default {
 	props: ['collapseNav', 'mode'],
 	data() {
 		return {
-			merchant: {
-				name: 'Unnamed account'
-			},
-			business: this.getBusiness
+			business: {}
 		}
 	},
 	methods: {
@@ -67,7 +66,8 @@ export default {
 	},
 	mounted() {
 		this.fetchBusinesses()
-	}
+  		this.business = this.getBusiness;
+  	}
 }
 </script>
 
